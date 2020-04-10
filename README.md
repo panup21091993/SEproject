@@ -1,11 +1,10 @@
-# WeatherApplication 
+# WeatherApplication [![Say Thanks!](https://img.shields.io/badge/Say%20Thanks-!-1EAEDB.svg)](https://saythanks.io/to/abir.pal899@gmail.com)
 Weather application that tells you temperature and weather of a city.
 
 ## Tools Used:
   * HTML
   * CSS
   * JavaScript
-  * JQuery 3.4.1
   * AccuWeather API
 ## For Developers.
   The AccuWeather API used here is the free version. Hence only 50 requests per day can be made using the API Key.
@@ -15,3 +14,6 @@ Weather application that tells you temperature and weather of a city.
     Go to the line 1
       const key= "Paste Your Key Here";
  ``` 
+ ### Screenshot
+ ![](https://raw.githubusercontent.com/imabp/WeatherApplication/master/screenshot.gif)
+  

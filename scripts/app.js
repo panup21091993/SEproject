@@ -17,14 +17,14 @@ const updateUI = (data) => {
     <h5 class="my-3 city">${cityDets.EnglishName}</h5>
     <div class="my-3 weather">${weather.WeatherText}</div>
     <div class="display-4 my-4">
-      <span class="temperature">${weather.Temperature.Metric.Value}</span>
-      <span class="units">&deg;C</span>
+      <span id="temperature">${weather.Temperature.Metric.Value}</span>
+      <span id="units">&deg;C</span>
     </div>
   `;
   
   document.getElementsByClassName('share-bar')[0].innerHTML = "";
   
-  document.getElementsByClassName('share-bar')[0].setAttribute('data-title','Its '+weather.WeatherText+' in '+cityDets.EnglishName+' and the temperature is '+weather.Temperature.Metric.Value+'°C');
+  document.getElementsByClassName('share-bar')[0].setAttribute('data-title','Its '+weather_conditionElement+' in '+city_nameElement+' and the temperature is '+tempElement+'°C');
   //document.getElementsByClassName('share-bar')[0].setAttribute('data-url',window.location.href);
   new ShareBar({'facebookAppId': 586264738912911});
   

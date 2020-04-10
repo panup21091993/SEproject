@@ -9,46 +9,123 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="./style.css">
 	<link rel="stylesheet" href="./share.bar.css">
+	<script src='https://kit.fontawesome.com/a076d05399.js'></script>
 </head>
 
-<body>
 
+  <body>
     <div class="container my-5 mx-auto">
+      <h1 class="text-muted text-center my-4">Check Weather</h1>
 
-        <h1 class="text-muted text-center my-4">Check Weather</h1>
+      <form id="form" class="change-location my-4 text-center text-muted">
+        <label for="city">Enter a location for weather information</label>
+        <input
+          id="input"
+          type="text"
+          name="city"
+          class="from-control d-block w-100 p-2"
+        />
+        <br />
+        <button id="button" type="button" class="btn btn-success">
+          search
+        </button>
+      </form>
 
-        <form class="change-location my-4 text-center text-muted">
-            <label for="city">Enter a location for weather information</label>
-            <input type="text" name="city" class="from-control d-block w-100 p-2">
-        </form>
-
-        <div class="card shadow-lg rounded d-none">
-            <img src="https://via.placeholder.com/400x300" class="time card-img-top">
-            <div class="icon bg-light mx-auto text-center">
-                <img src="" alt="">
-            </div>
-            <div class="text-muted text-uppercase text-center details">
-                <h5 class="my-3">City name</h5>
-                <div class="my-3">Weather condition</div>
-                <div class="display-4 my-4">
-                    <span>temp</span>
-                    <span>&deg;C</span>
-                </div>
-            </div>
+      <div id="card" class="card shadow-lg rounded">
+        <img id="time_img" src="img/day.svg" class="time card-img-top" />
+        <div class="icon bg-light mx-auto text-center">
+          <img id="icon" src="" alt="" />
         </div>
-		<div class="share-bar" 
-		 data-url="https://www.accuweather.com/" 
-		 data-title="Its Sunny in Raleigh and the temperature is 22°C"  
-		 data-hashtags="#weather #checkWeather">
-		</div>
-		
+        <div class="text-muted text-uppercase text-center details">
+          <h5 id="city_name" class="my-3">City name</h5>
+          <div id="weather_condition" lass="my-3">Weather condition</div>
+          <div class="display-4 my-4">
+            <span id="temp">temp</span>
+            <span id="unit">&deg;C</span>
+          </div>
+		  <div class="my-3" style="font-size: 30px;">
+			<span id="maxTemp">Max</span><span id="maxUnit">&deg;C </span>
+			<i class='fas fa-temperature-high' style='font-size:30px;color:red'></i>
+			<span id="minTemp">Min</span><span id="minUnit">&deg;C</span>
+			<i class='fas fa-temperature-low' style='font-size:30px;color:blue'></i>
+		  </div>
+		  
+	    </div>
+          
+            <!-- switch button -->
+            <div class="custom-control custom-switch text-center" style="font-size: 18px;">
+              <span style="position: relative; right: 50px;">&deg;C</span>
+			  <input
+                type="checkbox"
+                class="custom-control-input"
+                id="customSwitch1"
+              />
+              <label
+                id="switch"
+                class="custom-control-label"
+                for="customSwitch1"
+              ></label>
+			  <span>&deg;F</span>
+            </div>
+			<br />
+		  <div class="social text-center">
+				<div class="share-bar" 
+				 data-url="https://openweathermap.org/" 
+				 data-title="Its Sunny in Raleigh and the temperature is 22°C"  
+				 data-hashtags="#weather #checkWeather">
+				</div>
+				<br /><br />
+			</div>
+        </div>
+      </div>
+	
+    <!-- 5 day forecast -->
+	
+    <div class="card mx-auto" style="width: 18rem;">
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+          <div class="display-8 my-8">
+            <span id="date1"></span>
+            <span id="temp1">temp</span>
+            <span>&deg;C</span>
+          </div>
+		  
+        </li>
+        <li class="list-group-item">
+          <div class="display-8 my-8">
+            <span id="date2"></span>
+            <span id="temp2">temp</span>
+            <span>&deg;C</span>
+          </div>
+        </li>
+        <li class="list-group-item">
+          <div class="display-8 my-8">
+            <span id="date3"></span>
+            <span id="temp3">temp</span>
+            <span>&deg;C</span>
+          </div>
+        </li>
+        <li class="list-group-item">
+          <div class="display-8 my-8">
+            <span id="date4"></span>
+            <span id="temp4">temp</span>
+            <span>&deg;C</span>
+          </div>
+        </li>
+        <li class="list-group-item">
+          <div class="display-8 my-8">
+            <span id="date5"></span>
+            <span id="temp5">temp</span>
+            <span>&deg;C</span>
+          </div>
+        </li>
+      </ul>
     </div>
+	
+    <script src="./scripts/new.js"></script>
 	<script src="./scripts/share.bar.js"></script>
-    <script src="./scripts/forecast.js"></script>
-    <script src="./scripts/app.js"></script>
 	<script>	
 		setTimeout(function(){ new ShareBar({'facebookAppId': 586264738912911}); }, 1500);
 	</script>
-</body>
-
+  </body>
 </html>
